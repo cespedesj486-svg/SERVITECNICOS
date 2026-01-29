@@ -1,48 +1,49 @@
-/* =========================
-   VARIABLES
-========================= */
+/* =====================================================
+   VARIABLES GLOBALES – IDENTIDAD VISUAL PREMIUM
+===================================================== */
 :root {
-  --bg-main: #f7f9fc;
-  --bg-soft: #eef3fb;
-  --glass: rgba(255,255,255,0.65);
+  --bg-main: #f8fafc;
+  --bg-soft: #eef2ff;
+  --glass: rgba(255,255,255,0.72);
 
-  --primary: #2563eb;
-  --secondary: #60a5fa;
-  --accent: #0ea5e9;
+  --primary: #1e40af;
+  --secondary: #3b82f6;
+  --accent: #38bdf8;
 
   --text: #0f172a;
-  --muted: #64748b;
+  --muted: #6b7280;
 
-  --radius: 18px;
+  --radius: 20px;
 }
 
-/* =========================
-   RESET
-========================= */
+/* =====================================================
+   RESET Y BASE
+===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", system-ui, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
   background:
-    radial-gradient(circle at top left, #dbeafe, transparent 45%),
-    radial-gradient(circle at bottom right, #eff6ff, transparent 40%),
+    radial-gradient(circle at top left, #e0e7ff, transparent 55%),
+    radial-gradient(circle at bottom right, #f0f9ff, transparent 45%),
     var(--bg-main);
   color: var(--text);
   overflow-x: hidden;
 }
 
-/* =========================
+/* =====================================================
    NAVBAR
-========================= */
+===================================================== */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.78);
   backdrop-filter: blur(18px);
   padding: 16px 32px;
   display: flex;
@@ -54,6 +55,7 @@ body {
 .logo {
   font-size: 1.4rem;
   font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .logo span {
@@ -90,9 +92,9 @@ body {
   width: 100%;
 }
 
-/* =========================
-   HERO CON FONDO FIJO
-========================= */
+/* =====================================================
+   HERO FONDO FIJO
+===================================================== */
 .hero-bg {
   height: 90vh;
   background: url("../img/fondo-tecnico.jpg") center / cover fixed;
@@ -102,12 +104,12 @@ body {
 }
 
 .hero-overlay {
-  background: rgba(255,255,255,0.75);
+  background: var(--glass);
   backdrop-filter: blur(20px);
   padding: 50px 60px;
   border-radius: 28px;
   text-align: center;
-  box-shadow: 0 40px 120px rgba(37,99,235,0.15);
+  box-shadow: 0 40px 120px rgba(30,64,175,0.18);
 }
 
 .hero-overlay h1 {
@@ -122,30 +124,55 @@ body {
   color: var(--muted);
 }
 
-/* =========================
-   BOTONES
-========================= */
+/* =====================================================
+   HERO PRINCIPAL
+===================================================== */
+.hero {
+  text-align: center;
+  padding: 120px 20px 100px;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-weight: 800;
+}
+
+.hero span {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin: 26px auto;
+  max-width: 620px;
+  color: var(--muted);
+}
+
+/* =====================================================
+   BOTÓN PRINCIPAL
+===================================================== */
 .btn-primary {
   display: inline-block;
-  padding: 11px 26px;
+  padding: 11px 28px;
   font-size: 0.8rem;
   font-weight: 700;
   border-radius: 999px;
   text-decoration: none;
   color: white;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  box-shadow: 0 10px 30px rgba(37,99,235,0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 12px 32px rgba(30,64,175,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 45px rgba(37,99,235,0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(30,64,175,0.45);
 }
 
-/* =========================
-   SECCIONES
-========================= */
+/* =====================================================
+   SECCIONES GENERALES
+===================================================== */
 .section {
   max-width: 1200px;
   margin: auto;
@@ -167,9 +194,9 @@ body {
   color: var(--muted);
 }
 
-/* =========================
+/* =====================================================
    GALERÍA
-========================= */
+===================================================== */
 .gallery-grid {
   margin-top: 50px;
   display: grid;
@@ -180,7 +207,8 @@ body {
 .gallery-item {
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 25px 50px rgba(15,23,42,0.12);
+  box-shadow: 0 25px 50px rgba(15,23,42,0.14);
+  transition: transform 0.4s ease;
 }
 
 .gallery-item img {
@@ -190,13 +218,17 @@ body {
   transition: transform 0.6s ease;
 }
 
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
+
 .gallery-item:hover img {
   transform: scale(1.12);
 }
 
-/* =========================
+/* =====================================================
    SERVICIOS
-========================= */
+===================================================== */
 .cards {
   margin-top: 60px;
   display: grid;
@@ -209,17 +241,28 @@ body {
   padding: 36px;
   border-radius: var(--radius);
   backdrop-filter: blur(18px);
-  box-shadow: 0 25px 60px rgba(15,23,42,0.08);
-  transition: transform 0.35s ease;
+  box-shadow: 0 25px 60px rgba(15,23,42,0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 40px 90px rgba(30,64,175,0.25);
 }
 
-/* =========================
-   FORMULARIO
-========================= */
+.card h3 {
+  margin-bottom: 14px;
+  color: var(--primary);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* =====================================================
+   CONTACTO
+===================================================== */
 form {
   max-width: 420px;
   margin: 50px auto 0;
@@ -227,7 +270,7 @@ form {
   padding: 36px;
   border-radius: var(--radius);
   backdrop-filter: blur(18px);
-  box-shadow: 0 30px 80px rgba(15,23,42,0.12);
+  box-shadow: 0 30px 80px rgba(15,23,42,0.14);
 }
 
 input, select, textarea {
@@ -236,58 +279,88 @@ input, select, textarea {
   margin-bottom: 15px;
   border-radius: 12px;
   border: 1px solid rgba(15,23,42,0.12);
+  background: white;
+  font-size: 0.85rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30,64,175,0.25);
 }
 
 button {
   width: 100%;
   padding: 11px;
+  font-size: 0.85rem;
+  font-weight: 700;
   border-radius: 999px;
   border: none;
+  cursor: pointer;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
-  cursor: pointer;
+  box-shadow: 0 14px 36px rgba(30,64,175,0.4);
 }
 
-/* =========================
-   BOTONES FLOTANTES
-========================= */
+/* =====================================================
+   BOTONES SOCIALES FLOTANTES – PRO
+===================================================== */
 .floating-socials {
   position: fixed;
-  bottom: 25px;
-  left: 25px;
+  bottom: 28px;
+  left: 26px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .social-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 15px 40px rgba(37,99,235,0.35);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 45px rgba(15,23,42,0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .social-btn img {
-  width: 26px;
+  width: 24px;
 }
 
-/* =========================
+.social-btn:hover {
+  transform: translateX(10px);
+}
+
+/* Colores por red */
+.social-btn.whatsapp {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.social-btn.facebook {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.social-btn.tiktok {
+  background: linear-gradient(135deg, #020617, #111827);
+}
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 footer {
   padding: 60px 20px;
   text-align: center;
   color: var(--muted);
 }
 
-/* =========================
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 @media (max-width: 768px) {
 
   .nav-links {
@@ -301,16 +374,11 @@ footer {
   }
 
   .hero-overlay {
-    padding: 34px 22px;
+    padding: 32px 22px;
   }
 
   .section {
     padding: 80px 16px;
-  }
-
-  .cards,
-  .gallery-grid {
-    gap: 24px;
   }
 
   .floating-socials {
@@ -319,94 +387,11 @@ footer {
   }
 
   .social-btn {
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
   }
 
   .social-btn img {
-    width: 22px;
-  }
-}
-/* =========================
-   FLOATING SOCIAL BUTTONS
-========================= */
-.floating-socials {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  z-index: 999;
-}
-
-/* BOTÓN BASE */
-.social-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(14px);
-  background: rgba(255,255,255,0.55);
-  box-shadow:
-    0 15px 40px rgba(0,0,0,0.18),
-    inset 0 0 0 1px rgba(255,255,255,0.6);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    background 0.35s ease;
-}
-
-/* ICONOS */
-.social-btn img {
-  width: 26px;
-  transition: transform 0.35s ease;
-}
-
-/* EFECTO HOVER */
-.social-btn:hover {
-  transform: translateX(8px) scale(1.08);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.28);
-}
-
-.social-btn:hover img {
-  transform: scale(1.15);
-}
-
-/* =========================
-   COLORES POR RED
-========================= */
-.social-btn.whatsapp {
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-}
-
-.social-btn.facebook {
-  background: linear-gradient(135deg, #1877f2, #3b82f6);
-}
-
-.social-btn.tiktok {
-  background: linear-gradient(135deg, #000000, #111827);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-
-  .floating-socials {
-    bottom: 16px;
-    left: 16px;
-    gap: 12px;
-  }
-
-  .social-btn {
-    width: 48px;
-    height: 48px;
-  }
-
-  .social-btn img {
-    width: 22px;
+    width: 20px;
   }
 }
