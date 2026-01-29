@@ -367,3 +367,131 @@ footer {
     padding: 36px 28px;
   }
 }
+
+@media (max-width: 768px) {
+
+  body {
+    background:
+      radial-gradient(circle at top, #e0edff, transparent 55%),
+      var(--bg-main);
+  }
+
+  /* NAVBAR */
+  .navbar {
+    padding: 14px 18px;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  /* HERO FONDO */
+  .hero-bg {
+    height: 85vh;
+    background-attachment: scroll; /* mejora rendimiento móvil */
+    padding: 0 14px;
+  }
+
+  .hero-overlay {
+    padding: 34px 22px;
+    border-radius: 22px;
+    box-shadow: 0 25px 80px rgba(37,99,235,0.18);
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.1rem;
+    line-height: 1.15;
+  }
+
+  .hero-overlay p {
+    font-size: 0.95rem;
+  }
+
+  /* BOTÓN PRINCIPAL */
+  .btn-primary {
+    padding: 10px 22px;
+    font-size: 0.75rem;
+    box-shadow: 0 10px 28px rgba(37,99,235,0.35);
+  }
+
+  /* SECCIONES */
+  .section {
+    padding: 80px 16px;
+  }
+
+  .section h2 {
+    font-size: 1.7rem;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+  }
+
+  /* CARDS */
+  .cards {
+    gap: 24px;
+  }
+
+  .card {
+    padding: 28px;
+    border-radius: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.05rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  /* GALERÍA */
+  .gallery-grid {
+    gap: 24px;
+  }
+
+  .gallery-item {
+    border-radius: 20px;
+  }
+
+  /* FORMULARIO */
+  form {
+    padding: 28px;
+    border-radius: 22px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+
+  /* FLOATING SOCIALS */
+  .floating-socials {
+    bottom: 18px;
+    left: 18px;
+    gap: 12px;
+  }
+
+  .social-btn {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 12px 32px rgba(37,99,235,0.35);
+  }
+
+  .social-btn img {
+    width: 22px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 50px 16px;
+    font-size: 0.85rem;
+  }
+}
