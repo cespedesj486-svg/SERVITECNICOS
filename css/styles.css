@@ -327,3 +327,86 @@ footer {
     width: 22px;
   }
 }
+/* =========================
+   FLOATING SOCIAL BUTTONS
+========================= */
+.floating-socials {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 999;
+}
+
+/* BOTÓN BASE */
+.social-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.55);
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.18),
+    inset 0 0 0 1px rgba(255,255,255,0.6);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* ICONOS */
+.social-btn img {
+  width: 26px;
+  transition: transform 0.35s ease;
+}
+
+/* EFECTO HOVER */
+.social-btn:hover {
+  transform: translateX(8px) scale(1.08);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.28);
+}
+
+.social-btn:hover img {
+  transform: scale(1.15);
+}
+
+/* =========================
+   COLORES POR RED
+========================= */
+.social-btn.whatsapp {
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+}
+
+.social-btn.facebook {
+  background: linear-gradient(135deg, #1877f2, #3b82f6);
+}
+
+.social-btn.tiktok {
+  background: linear-gradient(135deg, #000000, #111827);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  .floating-socials {
+    bottom: 16px;
+    left: 16px;
+    gap: 12px;
+  }
+
+  .social-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .social-btn img {
+    width: 22px;
+  }
+}
