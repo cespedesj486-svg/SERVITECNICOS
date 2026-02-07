@@ -11,40 +11,51 @@
 <body>
 
 <nav class="navbar">
-<div class="logo">SERVITECNICOS<span>JC</span></div>
+<div class="logo" href="#inicio">SERVITECNICOS<span class="span">JC</span></div>
 <ul class="nav-links">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#mision">Misión</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#inicio" class="inicio-button">Inicio</a></li>
+    <li><a href="#mision" class="mision-button">Misión</a></li>
+    <li><a href="#servicios" class="servicios-button">Servicios</a></li>
+    <li><a href="#contacto" class="contacto-button">Contacto</a></li>
 </ul>
+
 <button class="menu-toggle" aria-label="Abrir menú">
-  <span></span>
-  <span></span>
-  <span></span>
+<span>Inicio</span>
+<span>Misión</span>
+<span>Servicios</span>
+<span>Contacto </span>
 </button>
 </nav>
 
 <section class="hero-bg">
 <div class="hero-overlay">
+
+    <header>
     <h1>Servicio Técnico Moderno</h1>
-    <p>Neveras · Lavadoras · Aires Acondicionados</p>
+    <h2 class="h2-design">Mantenimiento preventivo y correctivo en:</h2>
+    </header>
+
+    <p class="hero-services">
+    Línea blanca · Neveras · Nevecones · Neveras comerciales · Cuartos fríos · Lavadoras · Secadoras
+    </p><br><br>
+
+    <hr class="hero-divider">
+
 </div>
 </section>
 
-
 <section id="inicio" class="hero">
-<h1>Reparación Inteligente<br><span>Neveras & Lavadoras</span></h1>
-<p>Tecnología, experiencia y confianza al servicio de tu hogar.</p>
+<h1>Realizamos Reparaciones Inteligentes<br><span>Indiquenos que servicio requiere</span></h1>
+<p>Con gusto realizaremos la cotizacion para que sea mas comoda y intuitiva la atencion con nosotros</p>
 <a href="#contacto" class="btn-primary">Solicitar servicio</a>
 </section>
 
 <section id="mision" class="section">
 <h2>Nuestra misión</h2>
 <p>
-    Brindar soluciones técnicas confiables y modernas, utilizando
-    diagnóstico tecnológico para prolongar la vida útil de los
-    electrodomésticos y reducir costos para nuestros clientes.
+    Proporcionar soluciones técnicas modernas en reparación y mantenimiento de
+    equipos de refrigeración y lavado, apoyándonos en la tecnología, la experiencia
+    y la mejora continua para ofrecer un servicio de alta calidad.
 </p>
 </section>
 
@@ -59,6 +70,22 @@
     <div class="gallery-item">
     <img src="img/servicio2.jpg" alt="Mantenimiento de lavadora">
     </div>
+
+    <div class="gallery-item">
+    <img src="img/servicio3.jpg" alt="Mantenimiento de lavadora">
+    </div>
+
+    <div class="gallery-item">
+    <img src="img/servicio3.jpg" alt="Reparación de nevera">
+    </div>
+
+    <div class="gallery-item">
+    <img src="img/servicio2.jpg" alt="Reparación de nevera">
+    </div>
+
+    <div class="gallery-item">
+    <img src="img/servicio3.jpg" alt="Reparación de nevera">
+    </div>
 </div>
 </section>
 
@@ -66,22 +93,58 @@
 <h2>Servicios</h2>
 
 <div class="cards">
+
+    <div class="card">
+    <h3>🏠 Línea blanca</h3>
+    <p>
+        Diagnóstico, mantenimiento y reparación de electrodomésticos del hogar,
+        garantizando funcionamiento seguro y eficiente.
+    </p>
+    </div>
+
     <div class="card">
     <h3>🧊 Neveras</h3>
-    <p>Mantenimiento preventivo, carga de gas y reparación electrónica.</p>
+    <p>
+        Mantenimiento preventivo, corrección de fallas, carga de gas
+        y reparación de sistemas de refrigeración.
+    </p>
+    </div>
+
+    <div class="card">
+    <h3>❄️ Nevecones</h3>
+    <p>
+        Reparación especializada de sistemas de refrigeración de gran capacidad,
+        asegurando temperatura estable y óptimo rendimiento.
+    </p>
+    </div>
+
+    <div class="card">
+    <h3>🏭 Cuartos fríos</h3>
+    <p>
+        Instalación, mantenimiento y diagnóstico técnico de cuartos fríos
+        para conservación de productos comerciales.
+    </p>
     </div>
 
     <div class="card">
     <h3>🧺 Lavadoras</h3>
-    <p>Solución de fallas en motores, tarjetas, bombas y sensores.</p>
+    <p>
+        Solución de fallas en motores, bombas, sensores y tarjetas electrónicas,
+        tanto en equipos domésticos como comerciales.
+    </p>
     </div>
 
     <div class="card">
-    <h3>❄️ Aires Acondicionados</h3>
-    <p>Mantenimiento, limpieza y diagnóstico especializado.</p>
+    <h3>🌀 Secadoras</h3>
+    <p>
+        Reparación de sistemas eléctricos y mecánicos, mantenimiento preventivo
+        y optimización del rendimiento del equipo.
+    </p>
     </div>
+
 </div>
 </section>
+
 
 <section id="contacto" class="section contact">
 <h2>Agenda tu servicio</h2>
@@ -91,30 +154,45 @@
     <input type="tel" id="phone" placeholder="Teléfono" required>
 
     <select id="device" required>
-    <option value="">Equipo</option>
-    <option>Nevera</option>
-    <option>Lavadora</option>
-    <option>Aire acondicionado</option>
+    <option value="" class="device" required>Seleccione su equipo</option>
+    <option>Linea Blanca</option>
+    <option>Neveras</option>
+    <option>Nevecones</option>
+    <option>Neveras Comerciales</option>
+    <option>Cuartos Frios</option>
+    <option>Lavadoras</option>
+    <option>Secadoras</option>
     </select>
 
     <textarea id="problem" rows="4" placeholder="Describe el problema"></textarea>
-    <button type="submit">Enviar a WhatsApp</button>
+    <button type="submit" class="btn-whatsapp">Enviar a WhatsApp</button>
 </form>
 </section>
 
 <!-- BOTÓN WHATSAPP -->
 <div class="floating-socials">
-<a href="https://wa.me/573144053182" target="_blank" class="social-btn whatsapp" aria-label="WhatsApp">
+
+<a href="https://wa.me/573144053182"
+    target="_blank"
+    class="social-btn whatsapp"
+    aria-label="WhatsApp">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
 </a>
 
-<a href="https://www.facebook.com/" target="_blank" class="social-btn facebook" aria-label="Facebook">
+<a href="https://www.facebook.com/tu_pagina"
+    target="_blank"
+    class="social-btn facebook"
+    aria-label="Facebook">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
 </a>
 
-<a href="https://www.tiktok.com/" target="_blank" class="social-btn tiktok" aria-label="TikTok">
+<a href="https://www.tiktok.com/@tu_usuario"
+    target="_blank"
+    class="social-btn tiktok"
+    aria-label="TikTok">
     <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
 </a>
+
 </div>
 
 <footer>
