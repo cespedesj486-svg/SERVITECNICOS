@@ -1,35 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===============================
+    FORMULARIO → WHATSAPP
+     =============================== */
   const form = document.getElementById("serviceForm");
 
-  if (!form) {
-    console.error("Formulario no encontrado");
-    return;
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const device = document.getElementById("device").value;
+      const problem = document.getElementById("problem").value.trim();
+
+      if (!name || !phone || !device) {
+        alert("Por favor completa los campos obligatorios");
+        return;
+      }
+
+      const message =
+        `Hola, quiero agendar un servicio técnico.%0A%0A` +
+        `👤 Nombre: ${name}%0A` +
+        `📱 Teléfono: ${phone}%0A` +
+        `🔧 Equipo: ${device}%0A` +
+        `📝 Problema: ${problem || "No especificado"}`;
+
+      const whatsappURL = `https://wa.me/573144053182?text=${message}`;
+
+      window.open(whatsappURL, "_blank");
+      form.reset();
+    });
+  } else {
+    console.warn("Formulario no encontrado");
   }
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  /* ===============================
+    MENÚ RESPONSIVE MOBILE
+     =============================== */
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const device = document.getElementById("device").value;
-    const problem = document.getElementById("problem").value.trim();
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      menuToggle.classList.toggle("open");
+    });
 
-    if (!name || !phone || !device) {
-      alert("Por favor completa los campos obligatorios");
-      return;
-    }
+    // Cerrar menú al tocar un enlace (UX pro)
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        menuToggle.classList.remove("open");
+      });
+    });
+  }
 
-    const message =
-      `Hola, quiero agendar un servicio técnico.%0A%0A` +
-      `👤 Nombre: ${name}%0A` +
-      `📱 Teléfono: ${phone}%0A` +
-      `🔧 Equipo: ${device}%0A` +
-      `📝 Problema: ${problem || "No especificado"}`;
-
-    const whatsappURL = `https://wa.me/573144053182?text=${message}`;
-
-    window.open(whatsappURL, "_blank");
-
-    form.reset();
-  });
 });
