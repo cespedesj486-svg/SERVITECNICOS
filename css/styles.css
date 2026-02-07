@@ -60,13 +60,13 @@ body {
   position: relative;
   display: inline-flex;
   align-items: center;
-  font-size: 26px;
+  font-size: 23px;
   font-weight: 600;
-  padding: 14px 28px;
+  padding: 12px 24px;
   background: #121a2b;
   color: var(--text);
   text-decoration: none;
-  border-radius: 22px;
+  border-radius: 20px;
 
   box-shadow:
     0 8px 24px rgba(37, 99, 235, 0.15),
