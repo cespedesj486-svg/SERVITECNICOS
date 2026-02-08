@@ -200,6 +200,10 @@ body {
   font-weight: 800;
 }
 
+h1:hover {
+  color: var(--primary);
+}
+
 .hero-overlay p {
   margin-top: 1rem;
   color: var(--muted);
@@ -249,7 +253,7 @@ h2 {
 .h2-design:hover {
   letter-spacing: 0.04em;
   transition: letter-spacing 0.4s ease;
-  color: var(--primary);
+  color: var(--text);
 }
 
 /* keyframes */
@@ -492,7 +496,7 @@ h2 {
   FACEBOOK – AZUL
 ===================== */
 .facebook {
-  background: #1877f2;
+  background: #96bef3dc;
   animation: pulse-blue 3s infinite;
 }
 
@@ -513,14 +517,14 @@ h2 {
   TIKTOK – NEGRO
 ===================== */
 .tiktok {
-  background: #000;
+  background: #242323d8;
   animation: float-dark 2.8s ease-in-out infinite;
 }
 
 .tiktok:hover {
   box-shadow:
-    0 0 0 6px rgba(255,255,255,0.25),
-    0 18px 45px rgba(0,0,0,0.8);
+    0 0 0 6px rgba(255, 255, 255, 0.911),
+    0 18px 45px rgba(92, 92, 92, 0.8);
   animation-play-state: paused;
 }
 
@@ -696,7 +700,7 @@ footer {
 }
 
 .nav-links a {
-  color: white;
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -708,7 +712,7 @@ footer {
   background: none;
   border: none;
   font-size: 2rem;
-  color: white;
+  color: var(--text);
   cursor: pointer;
 }
 
@@ -723,7 +727,7 @@ footer {
     top: 100%;
     right: 0;
     width: 100%;
-    background: #020617;
+    background: var(--primary);
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
@@ -748,11 +752,11 @@ footer {
 
   background: linear-gradient(
     to top,
-    rgba(11,18,32,1),
+    rgb(0, 84, 252),
     rgba(18,26,43,0.95)
   );
 
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--border);
   color: var(--muted);
   font-size: 0.9rem;
   letter-spacing: 0.3px;
