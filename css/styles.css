@@ -482,7 +482,7 @@ h2 {
 .whatsapp:hover {
   box-shadow:
     0 0 0 6px rgba(255,255,255,0.25),
-    0 15px 40px rgba(37,211,102,0.6);
+    0 15px 40px rgba(25, 233, 101, 0.822);
   animation-play-state: paused;
 }
 
@@ -605,7 +605,7 @@ footer {
 .mision-button:hover, 
 .servicios-button:hover, 
 .contacto-button:hover {
-  background-color:#2563eb;
+  background-color: var(--primary);
   color: white;
 }
 
