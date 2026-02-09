@@ -362,43 +362,105 @@ h2 {
 }
 
 
-/* GALERÍA */
-/* CONTENEDOR DE LA GALERÍA */
+/* === GALERÍA / ÁLBUM === */
+.section.gallery {
+  padding: 70px 20px;
+  background: #0b1220;
+  color: #fff;
+  text-align: center;
+}
+
+.section.gallery h2 {
+  font-size: 2.3rem;
+  margin-bottom: 40px;
+}
+
+/* Grid responsive automático */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* TARJETA DE CADA IMAGEN */
+/* Tarjeta tipo álbum */
 .gallery-item {
   position: relative;
-  overflow: hidden;
+  height: 300px;
   border-radius: 18px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  background: #f8f8f8;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+  background: #121a2b;
+  box-shadow: 0 12px 35px rgba(0,0,0,.45);
+  transition: transform .4s ease, box-shadow .4s ease;
 }
 
-/* IMAGEN */
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,0,0,.7);
+}
+
+/* Imagen */
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: transform 0.6s ease;
-}
-
-/* EFECTO HOVER */
-.gallery-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  transition: transform .6s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.08);
+  transform: scale(1.12);
 }
+
+/* Overlay tipo portada de álbum */
+.gallery-item::after {
+  content: attr(data-title);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  background: linear-gradient(transparent 45%, rgba(0,0,0,.85));
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* === VISOR TIPO ÁLBUM (LIGHTBOX) === */
+.album-viewer {
+  position: fixed;
+  inset: 0;
+  background: var(--primary);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.album-viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.8);
+}
+
+/* Ajustes móviles */
+@media (max-width: 480px) {
+  .gallery-item {
+    height: 240px;
+  }
+
+  .section.gallery h2 {
+    font-size: 2rem;
+  }
+}
+
 
 
 /* FORMULARIO */
