@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `🔧 Equipo: ${device}%0A` +
         `📝 Problema: ${problem || "No especificado"}`;
 
-      const whatsappURL = `https://wa.me/573144053182?text=${message}`;
+      const whatsappURL = `https://wa.me/573204292384?text=${message}`;
 
       window.open(whatsappURL, "_blank");
       form.reset();
